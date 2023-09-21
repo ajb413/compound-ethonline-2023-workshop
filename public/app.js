@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ethereumEnableButton.classList.add(hidden);
 
     instanceSelectBox.onchange = (event) => {
-      console.log(event);
       const index = cometInstances.findIndex(_ => _.value === event.target.value );
       renderUi(index);
     };
@@ -84,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function getAprs(instance) {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
-    console.log(instance.contracts.v3, cometAbi, provider);
     const comet = new ethers.Contract(instance.contracts.v3, cometAbi, provider);
 
     const secondsPerYear = 60 * 60 * 24 * 365;
