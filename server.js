@@ -10,13 +10,6 @@ if (!network || (network !== 'mainnet' && network !== 'base')) {
   process.exit(1);
 }
 
-let providerUrl;
-if (network === 'mainnet') {
-  providerUrl = process.env.MAINNET_PROVIDER_URL;
-} else if (network === 'base') {
-  providerUrl = process.env.BASE_PROVIDER_URL;
-}
-
 const express = require('express');
 const dApp = express();
 
@@ -33,7 +26,7 @@ dApp.listen(3008, async () => {
 
   await jsonRpcServer.listen();
 
-  console.log('\nEthereum Mainnet fork node running at http://127.0.0.1:8545/\n');
+  console.log('\nEthereum fork node running at http://127.0.0.1:8545/\n');
 
   console.log('Seeding my development account...\n');
 

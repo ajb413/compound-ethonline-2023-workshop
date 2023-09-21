@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newOption.innerText = instance.name;
         instanceSelectBox.append(newOption);
 
-        if (!firstInstanceWithChainIdIndex) {
+        if (isNaN(firstInstanceWithChainIdIndex)) {
           firstInstanceWithChainIdIndex = i;
         }
       }
@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ethereumEnableButton.classList.add(hidden);
 
     instanceSelectBox.onchange = (event) => {
-      const index = cometInstances.findIndex(_ => _.value === event.target.value );
-      renderUi(index);
+      const i = cometInstances.findIndex(_ => _.value === event.target.value);
+      renderUi(i);
     };
 
     renderUi(firstInstanceWithChainIdIndex); // renders options for the first Compound III instance in constants.js
