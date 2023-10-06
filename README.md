@@ -6,7 +6,7 @@ Example app that uses Compound III for supplying and borrowing on Mainnet or Bas
 
 This workshop video walks through building the app. The code from the video is in this repository.
 
-https://youtu.be/OjYe_5sVcTM
+https://youtu.be/aJ90sAWDy8s
 
 ## Install
 
